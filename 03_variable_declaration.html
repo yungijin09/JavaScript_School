@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+            변수 선언 - 데이터 타입 선언 x, var, let, const
+
+            1. var
+            - ES6 이전부터 존재
+            - 재선언, 재할당 모두 가능
+            - 주로 전역변수에 사용 -> 권장 x (덮어쓰기)
+        */
+       var studentName = "2학년 1반"; // 재선언 가능
+       console.log(studentName);
+       studentName = "2학년 2반";     // 재할당 가능
+       console.log(studentName);
+
+       var x = 8;
+       var y = 9;
+       var z = (x + y);
+       console.log("Z : ", z);
+
+       var x = 10; // 재선언
+       y = 11;     // 재할당
+       z = x-y;    // 재할당
+       console.log(z);
+
+       /*
+            2. let
+            - ES6 이후 등장
+            - 재선언 불가능, 재할당 가능 -> 권장
+            - 동일한 변수명을 다른 곳에서 사용이 불가
+       */
+    //   let x = 5;                        -> 재선언 시도
+    //   Identifier 'x' has already        -> 에러 발생  
+    //   console.log(x); 
+        let x1 = 10;
+        let y1 = 11;
+        let z1 = x1+ y1;
+        console.log("Z1 : ",z1);
+        
+        // let x1 = 9; -> 재선언 불가 -> syntax 에러
+        x1 = 27;
+        z1 = x1 + y1;
+        console.log("Z1 : ", z1);
+
+        /*
+            3. const
+            - ES6 이후 등장
+            - 변하지 않는 상수값  -> 변수명 대문자
+            - 재선언, 재할당 불가
+        */
+        const PI = 3.14;
+        // PI = 3; -> Assignment to constant variable. -> 예외(런타임 오류의 한 종류)
+        console.log(PI);
+
+        const Korea_dateFormat = "YYYY-MM-DD";
+        const USA_dateFormat = "DD-MM-YYYY";
+    </script>
+  </body>
+</html>
