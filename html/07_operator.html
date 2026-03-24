@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 할당 연산자
+        let x = 1;
+        let y = x;
+
+        x = x + y;      
+        console.log(x); // 2
+
+        x = x - y;      
+        console.log(x); // 1
+
+        x = x * y;      
+        console.log(x); // 1
+
+        x = x / y;      
+        console.log(x); // 1
+
+        x = 5;
+        y = 2;
+        let z = x % y;  
+        console.log(z); // 1
+
+        x = 3;
+        y = 2;
+        z = x ** y;     
+        console.log(z); // 9
+
+        // 2. 복합 할당 연산자 : +=, -=, *=, /=, %=
+        x = 3;
+        y = 4;
+
+        console.log(x += y);  // x = 7
+        console.log(x -= y);  // x = 3
+        console.log(x *= y);  // x = 12
+        console.log(x /= y);  // x = 3
+        console.log(x %= y);  // x = 3
+
+        
+    </script>
+</body>
+</html>
