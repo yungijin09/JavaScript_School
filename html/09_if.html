@@ -7,16 +7,21 @@
   </head>
   <body>
     <script>
-      let age = +prompt("나이를 입력하세요");
+      let age = prompt("나이를 입력하세요");
       let price = 0;
-      if (age >= 18) {
-        price = 1000;
-      } else if (age >= 12) {
-        price = 700;
-      } else if (age > 6) {
-        price = 450;
+
+      if (age) {                        // age가 존재 할 때
+        if (age < 70 && age >= 18) {
+          price = 1000;
+        } else if (age >= 12) {
+          price = 700;
+        } else if (age > 6) {
+          price = 450;
+        }
+        console.log(age + "세 : " + price + "원");
+      } else {
+        console.log("올바른 값을 입력하세요");
       }
-      console.log(age + "세 : " + price);
     </script>
   </body>
 </html>
