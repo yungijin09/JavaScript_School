@@ -307,20 +307,26 @@ _부트 스트랩 bootStrap 중요_
 
 # 11. 반복문
 
-- 특징
+- 특징 : 특정 코드 블록을 정해진 횟수만큼 반복해서 실행하게 하는 문장
 
 1. for loop
 
-- 특징
+- 특징 : 배열에서 가장 많이 사용
 - 동작 원리
+   - for(statement1; statement2; statement3){
+      조건절이 참인 동안 실행할 코드
+   }
+   - statement1 : 코드 블록을 실행하기 전에 무조건 한 번 실행하는 초기화 문장
+   - statement2 : 코드 블록을 실행시킬 조건문
+   - statement3 : 코드 블록 실행한 후 실행되는 횟수 증가 코드
 - 실습(11_for_loop.html)
 
-- for 과 break
-- for 과 continue
+- for 과 break : break를 만나면 반복문 블럭을 중단하고 블록을 빠져나온다.
+- for 과 continue : continue를 만나면 반복문을 다시 실행
 
 1-1. for ~ in
 
-- 특징
+- 특징 : 배열, object에서 많이 사용
 - 실습(12_for_in.html)
 
 1-2. for ~ of
