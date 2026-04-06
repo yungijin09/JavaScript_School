@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        객체
+        - 파이썬의 딕셔너리와 유사
+        - 관련있는 데이터를 하나로 담기 위해 사용
+        - { }
+        - { 키(key) = 값(value) }
+        - 키 값은 유일하다.
+        - 키 값은 문자열이다.
+        - 값 : 문자열, 숫자, boolean, [], {}
+        - 순서가 반드시 유지되는 것은 아니지만 ES6 이후 가급적 유지하려고 노력한다.
+        */
+
+      let student = {
+        name: "강하윤",
+        age: 17,
+        phone: "010-1111-2222",
+        address: "서울시 관악구",
+      };
+      console.log(student);
+
+      //1. 키에 숫자가 올 수 없다.
+      let person = {
+        111: "모두 1", // -> 111을 문자로 인식
+        222: "모두 2", // -> 222를 문자로 인식
+      };
+      console.log(person);
+
+      //2. 키 값을 가져오는 함수 : Object.keys();
+      let keys = Object.keys(person);
+      console.log(keys); // -> ['111', '222']
+      console.log(keys[0]); // -> 111
+      console.log(keys[1]); // -> 222
+
+      let name = student.name;
+      console.log(name);
+
+      /*
+            let name과 student.name이 다른 이유
+            - 변수 scope : 어떤 변수가 있을 때 그 변수가 힘을 낼 수 있는 범위
+        */
+
+      // 4. 객체의 값 변경 : 객체명.키 = 값
+      student.name = "강하늘";
+      console.log(student);
+
+      // 5. 객체의 새로운 키와 값 추가
+      student.bloodType = "AB";
+      console.log(student);
+
+      // 6. 객체를 생성하는 다른 방법
+      let person2 = {};
+      person2.name = "유재석";
+      person2.age = 50;
+      console.log(person2);
+
+      // 7. Object의 특정 키에 접근하는 방법(!!!중요)
+      // 객체이름["키"];
+      console.log(student.bloodType);
+      console.log(student["bloodType"]); // user(사용자)가 원하는 정보를 입력받아서 찾을 때
+
+      let userInputKey = prompt(
+        "알고 싶은 정보 입력(name, age, phone, address, bloodType): ",
+      );
+      console.log(userInputKey, ":", student[userInputKey]);
+
+      let nums
+    </script>
+  </body>
+</html>

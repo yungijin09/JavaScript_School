@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1. 문자열(String)
+      let name1 = "2학년 1반";
+      //   let name2 = '2학년 1반'; -> 가능
+      let str1 = "너희는 '2학년 1반'이야";
+      console.log(str1);
+      let str2 = '너희는 "2학년 1반"이야';
+      console.log(str2);
+      //   let str3 = "너희는 \"2학년 1반\"이야"; -> escape 문자
+      //   console.log(str3);
+
+      //   문자열 합치기
+      let firstName = "John";
+      let lastName = "Bacon";
+      let fullName = firstName + lastName;
+      console.log(fullName);
+
+      /* 2. 숫자형(Number 객체)
+        - 정수, 실수, 0 다 포함........
+        - 다양한 속성과 함수(메서드)가 제공됨
+        - 특징 : 다른 언어와 달리 64비트 부동소수점 형식 
+            -> 연산시 오류 발생이 가끔 된다.
+      */
+      let num1 = 13;
+      let num2 = 13.8;
+      console.log(Number.MAX_VALUE); // -> 1.7976931348623157e+308
+      console.log(Number.MAX_SAFE_INTEGER); // -> 9007199254740991
+      // 정밀도 오차
+      let result = 0.1 + 0.2;
+
+      if (result === 0.3) {
+        console.log(result);
+      }
+      console.log(result); // -> 0.30000000000000004
+
+      /* 정밀도 오차 해결방법
+        1. 정수로 변환 후 계산 (0.1*10 + 0.2*10) / 10
+        2. toFixed() 사용   (0.1+0.2).toFixed(1)
+        3. 다양한 라이브러리 사용 : BigInt
+      */
+      console.log((0.1 * 10 + 0.2 * 10) / 10); // -> 0.3
+      console.log((0.1 + 0.2).toFixed(1)); // -> 0.3
+
+      /* 3. Boolean(true, false) */
+      let userInputAge = 17;
+      let adultAge = 20;
+      let isAdult = userInputAge >= adultAge;
+      console.log(isAdult);
+
+      /* 4. undefined(중요) 
+        - 데이터 타입이자 데이터 값
+        - 정의되지 않은, 값을 할당하지 않은 상태
+        - 할당을 하지 않은 개발자의 실수가 있는 경우
+          실행단계에서 브라우저 엔진이 자동으로 할당하는 값
+          따라서 개발단계에서 수시로 개발자도구로 undefined가 발생하는지 체크
+      */
+      let a;
+      console.log(a);
+
+      /* 5.null(중요)
+        - 없음을 의미하는 데이터 타입(메모리 할당을 끊음)
+        - 실수가 아닌 개발자가 의도적으로 설정하는 경우가 많음
+        - 선언 시점에는 어떤 값이나 데이터 타입이 올지 정해지지 않은 경우
+        - Garbage Collection(가바지 컬렉션 : 더 이상 사용하지 않는 데이터를 메모리에서 삭제)
+      */
+      let jsonData = "굉장히 큰 데이터";
+      // 처리 완료
+      jsonData = null; // -> 가바지 컬렉션
+      console.log(jsonData);
+
+      // 자바스크립트에서 항상 false로 간주하는 값(6)
+      //  - false, undefined, null, 0, ""(빈 문자열), NaN(Not a Number)
+
+      // 입력이 있어야 "Hello" 라고 출력하는 코드
+      // 입력 : window.prompt();
+      let userInput = prompt("이름을 입력하세요 : ");
+      if(userInput){
+        console.log(`Hello ${userInput}`);
+      }
+    </script>
+  </body>
+</html>
