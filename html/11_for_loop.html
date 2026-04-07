@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*  - for(statement1; statement2; statement3){
+       조건절이 참인 동안 실행할 코드
+    }
+    - statement1 : 코드 블록을 실행하기 전에 무조건 한 번 실행하는 초기화 문장
+    - statement2 : 코드 블록을 실행시킬 조건문
+    - statement3 : 코드 블록 실행한 후 실행되는 횟수 증가 코드
+    1 => 2 => 참 코드실행 => 3 => 2 => 참 코드실행 => 3 => 2 => 참 코드실행 => 3 => 2 => 조건 거짓 => 종료
+*/
+    let brands = ["애플", "구글", "마이크로소프트", "삼성", "아마존", "테슬라"];
+    // console.log(brands[0]);
+    // console.log(brands[1]);
+    // console.log(brands[2]);
+    // console.log(brands[3]);
+    // console.log(brands[4]);
+    // console.log(brands[5]);
+    for(let i = 0; i < brands.length; i++){
+        console.log(brands[i]);
+    }
+
+    // 실습 : 자판기에서 음료를 구하는 프로그램 작성
+    // 돈이 들어오면 구입이 가능한 음료수 목록 보여주기
+    const drinkList = [
+        {name: "오렌지", price: 1000},
+        {name: "파워에이드", price: 1200},
+        {name: "커피", price: 700},
+        {name: "보리음료", price: 1200},
+        {name: "코카콜라", price: 1800},
+    ];
+    let inputCoin = 1000;
+    let canBuy = [];
+    for(let i = 0; i < drinkList.length; i++){
+        if(drinkList[i].price <= inputCoin){
+            canBuy.push(drinkList[i].name);
+        }
+    }
+    if(canBuy.length === 0){
+        console.log(`구매할 수 있는 항목이 없습니다.`);
+    }
+    else{
+        console.log(`구입 가능한 항목 : ${canBuy}`);
+    }
+
+    for(let i = 0; i < 10; i++){
+        if (i == 5){
+            break;
+        }
+        console.log(i);
+    }
+    for(let i = 0; i < 10; i++){
+        if (i == 5){
+            continue;
+        }
+        console.log(i);
+    }
+    </script>
+</body>
+</html>
