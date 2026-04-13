@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 배열
+      let brands = [
+        "애플",
+        "구글",
+        "마이크로소프트",
+        "삼성",
+        "아마존",
+        "테슬라",
+      ];
+      for (const brand of brands) {
+        console.log(brand);
+      }
+
+      // 2. 문자열
+      let lang = "JavaScript";
+      for(const char of lang){
+        console.log(char);
+      }
+
+      // 3
+      let nums = 9988474820;
+      console.log(typeof(nums));
+      let numToStr = nums.toString();
+      for(const num of numToStr){
+        console.log(num);
+      }
+      console.log(typeof(nums));
+    </script>
+  </body>
+</html>
