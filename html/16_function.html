@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <style>
-  </style>
+  <style></style>
   <script src="../js/common.js"></script>
   <body>
     <script>
@@ -21,19 +20,86 @@
       2. 전역변수(var)
       3. 코드 순서대로
       */
-     console.log(sum(4, 8));  // 함수 호출
-     
-     function sum(n1, n2){  // 함수 선언
-      return n1 + n2;
-    }
-    console.log(sum(4, 8));  // 함수 호출
-    
+      console.log(sum(4, 8)); // 함수 호출
+
+      function sum(n1, n2) {
+        // 함수 선언
+        return n1 + n2;
+      }
+      console.log(sum(4, 8)); // 함수 호출
+
       // function taxAmount(productPrice){
       //   let tax = 0.1;
       //   return productPrice*tax;
       // }
       console.log(taxAmount(13400));
       console.log(getTop5());
-      </script>
+
+      // 2. 함수 표현식 : 변수에 함수를 할당, 변수명이 함수명처럼 사용, 선언 후 사용 가능
+      // console.log(sum2);
+      const sum2 = function (n1, n2) {
+        return n1 + n2;
+      };
+      console.log(sum2(5, 6));
+
+      // 3. 화살표 함수
+      // - 실무에서 가장 많이 사용
+      // - 변수에 함수를 할당, 변수명이 함수명처럼 사용
+      // - function 사용 x, (매개변수) => {}
+      // - return문이 있고, 한 줄로 되어있다면 return과 {} 생략 가능
+
+      const sum3 = (n1, n2) => n1 + n2;
+      console.log(sum2(7, 6));
+
+      const test = (productPrice) => {
+        let tax = 0.1;
+        return productPrice * tax;
+      };
+      console.log(test(10));
+
+      const getTop2 = () => ["이재용", 2, 3, 4, "윤기진"];
+      console.log(getTop2());
+
+      // 숫자 2개, 연산자를 입력 받아 연산을 실행하는 함수를 작성해보자.
+      let n1 = 9;
+      let n2 = 63;
+      let op = "*";
+      const calculator = (n1, n2, op) => {
+        // switch(op){
+        //   case '+' : return n1 + n2;
+        //   case '-' : return n1 - n2;
+        //   case '*' : return n1 * n2;
+        //   case '/' : return n1 / n2;
+        //   case '**' : return n1 ** n2;
+        //   case '%' : return n1 % n2;
+        //   default : return "error";
+        // }
+        if (op === "+") {
+          return n1 + n2;
+        } else if (op === "-") {
+          return n1 - n2;
+        } else if (op === "*") {
+          return n1 * n2;
+        } else if (op === "/") {
+          return n1 / n2;
+        } else if (op === "**") {
+          return n1 ** n2;
+        } else if (op === "%") {
+          return n1 % n2;
+        } else {
+          return "error";
+        }
+      };
+      console.log(calculator(n1, n2, op));
+
+      // 4. Function() 함수
+      // new Function("", "", "",.....) => 마지막 문자열은 코드(앞에껀 매개변수)
+
+      const calculator2 = new Function("n1", "n2", "return n1 + n2");
+      console.log(calculator2(3, 4));
+
+      const calculator3 = new Function("n1", "n2","return n1" + op + "n2"); // op = +)"return n1 + n2" 
+      console.log(calculator3(1, 2))                                        // op가 string 타입이니까 
+    </script>
   </body>
 </html>
