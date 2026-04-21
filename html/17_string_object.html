@@ -32,7 +32,7 @@
       // 3. lastIndexOf(대상 문자열): 뒤에서부터 문자열을 찾아서 반환(여러개라면 첫 문자열)
       console.log(str.lastIndexOf("Seoul"));
 
-      // 4. slice(): 문자열을 (시작위치, 종료위치-1)만큼 잘라내기, 종료위치 입력 x -> 끝까지
+      // 4. ***slice(): 문자열을 (시작위치, 종료위치-1)만큼 잘라내기, 종료위치 입력 x -> 끝까지
       // 시작과 종료 위치에 음수 사용 가능, 음수의 경우 뒤부터
       str = "Welcome Seoul";
       console.log(str.slice(8, 13));
@@ -54,7 +54,7 @@
       let nowDate = "20260420";
       let year = nowDate.substr(0, 4);
       let month = nowDate.substr(4, 2);
-      let date = nowDate.substr(6, 2)
+      let date = nowDate.substr(6, 2);
       console.log(year, month, date);
 
       /*    slice   vs  substring   vs  substr
@@ -63,6 +63,40 @@
         - substring: slice와 유사하지만 인덱스가 음수인 경우 처리가 다르다.
         - substr: 인덱스가 아닌 글자 수를 기준으로 하짐나 현재 웹표준으로 권장하지 않는다.
       */
-    </script>
+      
+      // 7. replace(str1, str2) : str1을 str2로 교체
+      str = "Welcome Jeju! Jeju!";
+      console.log(str.replace("Jeju", "Seoul"));
+      console.log(str.replace("Jeju", "Seoul").replace("Jeju", "Seoul"));
+      // 정규식(Reqular expression) 
+      // - 특정한 포맷을 맞출 때(전화번호, 년월일, 이메일, 아이디 제한(첫번째는 숫자로 시작 불가, 32글자 이내))
+      
+      // ** 8. toUpperCase() : 대문자로 변환
+      // ** 9. toLowerCase() : 소문자로 변환
+      // 사용자는 다양하게 입력하게 되므로...
+      // (프론트엔드) : 입력된 내용을 대(소)문자로 변환하면 된다
+      console.log(str.toUpperCase());
+      console.log(str.toLowerCase());
+
+      // 10. concat(): 여러 문자열을 합치기, 합칠 문자열의 갯수에는 제한이 없다.
+      let firstName = "John";
+      let lastName = "Doe";
+      let fullName = firstName.concat(" ",lastName,". ","Nice to meet you");
+      console.log(fullName);
+
+      // 1. trim() : 문자열의 앞, 뒤 공백을 없애기
+      // const middleTrim = () => {}   
+      let name = "       에이스     2학년       1반         ";
+      console.log(name.trim());
+
+      // ***** 12. padStart(문자열 최소 길이, "추가할 문자열") : 현업에서 가장 많이 사용하는 함수 중 하나
+      // 특정 문자로 앞을 채운다.
+
+      // 월을 입력받아, 월이 한자리 인 경우 "0"을 붙여서 출력(포맷을 맞추기 위해)
+      // month = prompt("월 입력");
+      // console.log(month.padStart(2, "0"));
+
+      // 13. padEnd(문자열 최소 길이, "추가할 문자열") : 거의 사용하지 X 
+      </script>
   </body>
 </html>
